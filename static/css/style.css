@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body::-webkit-scrollbar {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    align-items: center;
+}
+
+.search {
+    padding: 0 50px 15px 16px;
+
+}
+
+.logo-as{
+    max-height: 320px;
+    height: auto;
+    height: 35px;
+    width: 90%;
+}
+
+.svg-logo{
+    width: 100%;
+}
+
+.bar {
+    opacity: 100%;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #cbcbcb;
+}
+
+.info{
+    width: 100%;
+    padding-top: 3%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+p {
+    text-align: center;
+    text-wrap: balance;
+
+}
+
+.contacts{
+    width: 50%;
+}
+ .container-contacts {
+    padding: 40px;
+    display: flex;
+    background: #E6EBE6;
+    width: 100%;
+}
+.bg-bottom{
+    background: linear-gradient(217deg, rgba(255,0,0,0.8), rgba(255,0,0,0) 50.71%),linear-gradient(127deg, rgba(50, 227, 50, 0.414), rgba(0,255,0,0) 70.71%),linear-gradient(336deg, rgba(0,0,255,0.8), rgba(0,0,255,0) 70.71%);
+    background-size: 180% 180%;
+    animation: gradient 12s ease infinite;
+    width: 100%;
+}
+.bg-bottom::before{
+    background: rgba(0, 0, 0, 0.5);
+}
+.link-parent:link {
+    color: rgba(0, 85, 142, 0.906);
+    transition: 0.4s;
+}
+.link-parent{
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    height: 60%;
+    align-items: center;
+}
+.link-parent:hover {
+    color: rgba(255, 255, 255, 0.881);
+    transition: 0.4s;
+}
+.info-text{
+    width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+/* .text {
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+} */
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    padding-left: 5%;
+    padding-top: 2%;
+    z-index: 1;
+}
+
+.img {
+    margin-top: 10px;
+    opacity: 70%;
+    width: 100%;
+}
+
+.text-description-container{
+    width: 50%;
+    display: inline;
+}
+.content-img-news {
+    opacity: 90%;
+    height: 300px;
+    width: 100%;
+}
+
+.copyright-container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.copytext{
+    color: rgba(192, 192, 192, 0.89);
+}
+
+.copytext-links{
+    color: rgba(55, 53, 53, 0.89);
+}
+
+.description {
+    width:100%;
+}
+.description-container-1{
+    padding-top: 7%;
+    padding-bottom: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container-social-media-2{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+    padding-top: 2%;
+}
+.container-social-media{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+
+}
+
+.description-main{
+    width: 100%;
+}
+
+@media screen and (max-width: 800px){
+    .bg {
+        height: 320px;
+    }
+    .bg-text-h1{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:800px) {
+    .map {
+        display: flex;
+        flex-direction: column;
+    }
+    .contacts {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .logo-info {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:800px) {
+    .content-img {
+        width: 70%;
+        height: 60%;
+    }
+    .text-description-container{
+        padding-top: 20%;
+        padding-bottom: 30%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .description-container-1 {
+        flex-direction: column;
+        width: 100%;
+    }
+    .info-text{
+        width: 80%;
+        padding-top: 0;
+    }
+    .all-stuff{
+        position: absolute;
+    }
+    .link-text{
+        padding-left: 7px;
+    }
+    .description-container-social-media-1{
+        height: 80px;
+    }
+}
+@media screen and (max-width:600px) {
+    .container-social-media{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+    .main-container-social-media-2{
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

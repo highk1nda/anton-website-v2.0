@@ -1,0 +1,230 @@
+@mixin fontsize-h1($v1){
+    font-size: $v1;
+}
+.bg-text-h1{
+    @include fontsize-h1(37px);
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.bg-text {
+    width: 70%;
+}
+
+@mixin bg-text-caps-mixin{
+    z-index: -1;
+    filter: blur(3px);
+    color: #535353;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+    font-weight: 900;
+    font-family: "Raleway", sans-serif;
+}
+
+.bg-text-caps-p{
+    font-size: 15vw;
+    letter-spacing: 2vw;
+    @include bg-text-caps-mixin()
+}
+// .bg-bottom-caps-p{
+//     display: flex;
+//     justify-content: center;
+//     font-size: 13vw;
+//     letter-spacing: 3vw;
+//     @include bg-text-caps-mixin()
+// }
+@mixin bg-gradient{
+    background: linear-gradient(217deg, rgba(255,0,0,0.8), rgba(255, 255, 255, 0) 50.71%),linear-gradient(127deg, rgba(50, 227, 50, 0.8), rgba(255, 255, 255, 0) 70.71%),linear-gradient(336deg, rgba(0,0,255,0.8), rgba(255, 255, 255, 0) 70.71%);
+    animation: gradient 12s ease infinite;
+    background-size: 200% 200%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: (3px);
+}
+@mixin bg-containers($opacity){
+    color: rgba(255, 255, 255, 0.73);
+    background: rgba(0, 0, 0, $opacity);
+}
+
+.bg {
+    @include bg-gradient();
+    height: 780px;
+}
+
+.description-container-social-media-1{
+    height: 140px;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    margin: 0;
+}
+
+.logo-info {
+    @include bg-containers(0.87);
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    @include bg-containers(0.95);
+    width: 100%;
+    padding: 30px;
+    margin: 0;
+    position: relative;
+}
+
+.copyright {
+    @include bg-containers(0.87);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.content-img-text{
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    font-size:calc(12px + 1.1vw);
+    justify-content: center;
+    transition: 0.2s;
+    &:hover{
+        font-size:calc(12px + 1.2vw);
+        transition: 0.2s;
+        box-shadow: 0px 0px #7b7b7b;
+    }
+}
+
+h1 span{
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #65A068;
+    width: calc(13vh + 2.5vw);
+    height: 6vh;
+}
+
+@media screen and (max-width:1000px) {
+    h1 span {
+        width: calc(16vh + 1vw);
+    }
+    .span-bg-5{
+        width: calc(13vh + 1vw);
+    }
+}
+
+@media screen and (max-width:520px) {
+    .span-bg-5{
+        width: calc(20vh + 1vw);
+    }
+}
+
+@media screen and (max-width:350px) {
+    .span-bg-5{
+        width: calc(13vh + 1vw);
+    }
+}
+
+@media screen and (max-width:410px) {
+    h1 span {
+        width: calc(12vh + 1vw);
+    }
+}
+
+.content-img{
+    z-index: 1;
+    opacity: 1;
+    height: auto;
+    max-height: 350px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 7%;
+    box-shadow: 9px 13px #414141;
+    transition: .4s;
+    &:hover{
+        box-shadow:4px 5px #7b7b7b;
+        transition: .4s;
+    }
+}
+
+.content-img-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+//     transition: 0.4s;
+//     &:hover{
+//        font-size:calc(12px + 1vw);
+//        transition: 0.4s;
+//        box-shadow: 0px 0px #7b7b7b;
+//    }
+}
+
+.animated-circle {
+    position: absolute;
+    background-color: rgba(137, 100, 222, 0.4); /* Adjust opacity as needed */
+    border-radius: 50%;
+    filter: blur(95px);
+    animation: slide 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+    @keyframes slide {
+        0% {
+            transform: translate(-50%, -50%); /* Initial position */
+        }
+        100% {
+            transform: translate(-50%, -150%); /* Destination position */
+        }
+    }
+    
+}
+
+.content-img-container{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    // font-size: 40px;
+    // &:hover{
+    //     font-size: 40px;
+    // }
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* Animation Keyframes */
+
+// @mixin bg-gradient{
+//     animation: gradient 12s ease infinite;
+//     background-size: 180% 80%;
+// }
+// .description-container-social-media-1{
+//     background: linear-gradient(217deg, rgba(255,0,0,0.8), rgba(255,0,0,0) 50.71%),linear-gradient(127deg, rgba(50, 227, 50, 0.8), rgba(0,255,0,0) 70.71%),linear-gradient(336deg, rgba(0,0,255,0.8), rgba(0,0,255,0) 70.71%);
+//     animation: gradient 12s ease infinite;
+//     height: 200px;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     @include bg-gradient
+    
+// }
+// @mixin width-70($v1){
+//     width: $v1
+// }
+// .bg-text{
+//     @include width-70(70%)
+// }
+// .
