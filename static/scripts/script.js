@@ -1,39 +1,22 @@
-// HAMBURGER below
+// ── HAMBURGER ──────────────────────────────────────────────────────────────
 
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
 
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
+hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("active");
     menu.classList.toggle("active");
-}
+});
 
 
+// ── CONTENT CARDS FADE-IN ON SCROLL ────────────────────────────────────────
 
-document.addEventListener("DOMContentLoaded", function() {
-    var contentContainers = document.querySelectorAll(".content-img-container");
-    // var bgText = document.querySelector(".bg-text-caps-p");
-
-    var offset = 200;
-
-    window.addEventListener("scroll", function() {
-        contentContainers.forEach(function(container, index) {
-            if (isElementInViewport(container, offset)) {
-                if (!container.classList.contains("visible")) {
-                    container.classList.add("visible");
-                }
-            } else {
-                if (container.classList.contains("visible")) {
-                    container.classList.remove("visible");
-                }
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const contentContainers = document.querySelectorAll(".content-img-container");
+    const offset = 200;
 
     function isElementInViewport(el, offset) {
-        var rect = el.getBoundingClientRect();
+        const rect = el.getBoundingClientRect();
         return (
             rect.top >= 0 - offset &&
             rect.left >= 0 &&
@@ -42,17 +25,21 @@ document.addEventListener("DOMContentLoaded", function() {
         );
     }
 
-    // Trigger the scroll event
+    window.addEventListener("scroll", function () {
+        contentContainers.forEach(function (container) {
+            if (isElementInViewport(container, offset)) {
+                container.classList.add("visible");
+            } else {
+                container.classList.remove("visible");
+            }
+        });
+    });
+
     window.dispatchEvent(new Event('scroll'));
 });
 
 
-// HAMBURGER above
-
-
-
-// SLIDER ANIMATION below
-
+// ── PHOTO SLIDER ────────────────────────────────────────────────────────────
 
 const slides = document.querySelectorAll(".slides img");
 let slideIndex = 0;
@@ -60,101 +47,78 @@ let intervalId = null;
 
 document.addEventListener("DOMContentLoaded", initializeSlider);
 
-function initializeSlider(){
-    if(slides.length > 0){
+function initializeSlider() {
+    if (slides.length > 0) {
         slides[slideIndex].classList.add("displaySlide");
         intervalId = setInterval(nextSlide, 50000);
     }
 }
 
-function showSlide(index){
-    if(index >= slides.length){
-        slideIndex = 0;
-    }
-    else if(index < 0){
-        slideIndex = slides.length - 1;
-    }
+function showSlide(index) {
+    if (index >= slides.length) slideIndex = 0;
+    else if (index < 0) slideIndex = slides.length - 1;
 
-    slides.forEach(slide => {
-        slide.classList.remove("displaySlide");
-    });
+    slides.forEach(slide => slide.classList.remove("displaySlide"));
     slides[slideIndex].classList.add("displaySlide");
 }
 
-function prevSlide(){
+function prevSlide() {
     clearInterval(intervalId);
     slideIndex--;
     showSlide(slideIndex);
 }
 
-function nextSlide(){
+function nextSlide() {
     slideIndex++;
     showSlide(slideIndex);
 }
 
-function nextSlideImgClick(){
+function nextSlideImgClick() {
     slideIndex++;
     showSlide(slideIndex);
 }
 
 
+// ── TEXT SELECTOR ───────────────────────────────────────────────────────────
 
-// SLIDER ANIMATION above
+document.addEventListener("DOMContentLoaded", function () {
+    const topicMap = {
+        topicOne: 'textOne',
+        topicTwo: 'textTwo',
+        topicThree: 'textThree',
+    };
 
+    Object.entries(topicMap).forEach(([buttonId, textId]) => {
+        const btn = document.getElementById(buttonId);
+        if (btn) btn.addEventListener('click', () => showText(textId));
+    });
 
-
-// TEXT SELECTOR below
-
-document.getElementById('topicOne').addEventListener('click', function() {
-    showText('textOne');
+    function showText(textId) {
+        document.querySelectorAll('.text').forEach(t => t.classList.remove('displaySlide'));
+        const target = document.getElementById(textId);
+        if (target) target.classList.add('displaySlide');
+    }
 });
 
-document.getElementById('topicTwo').addEventListener('click', function() {
-    showText('textTwo');
+
+// ── ACTIVE NAV HIGHLIGHT ON SCROLL ─────────────────────────────────────────
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".menu li a");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => link.classList.remove("nav-active"));
+                    const active = document.querySelector(`.menu li a[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add("nav-active");
+                }
+            });
+        },
+        { threshold: 0.3 }
+    );
+
+    sections.forEach(section => observer.observe(section));
 });
-
-document.getElementById('topicThree').addEventListener('click', function() {
-    showText('textThree');
-});
-
-function showText(textId) {
-    let texts = document.querySelectorAll('.text');
-    texts.forEach(text => text.classList.remove('displaySlide'));
-    document.getElementById(textId).classList.add('displaySlide');
-}
-
-
-
-// TEXT SELECTOR above
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const test_form = document.getElementById("test-form");
-// console.log('FJDKFHDJKFHSKDJFH')
-
-// test_form.addEventListener("click", function test_form () {
-//     const text_area = document.getElementById("text-area");
-// })
-
-
-// function myFunction() {
-//     var x = document.getElementById("myLinks");
-//     if (x.style.display === "block") {
-//       x.style.display = "none";
-//     } else {
-//       x.style.display = "block";
-//     }
-//   }

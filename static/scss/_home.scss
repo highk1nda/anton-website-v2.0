@@ -1,0 +1,191 @@
+// ── HOME HERO ─────────────────────────────────────────────────────────────
+
+@mixin bg-gradient-home {
+    background: linear-gradient(217deg, rgba(255,0,0,0.8), rgba(255, 255, 255, 0) 50.71%),
+                linear-gradient(127deg, rgba(50, 227, 50, 0.8), rgba(255, 255, 255, 0) 70.71%),
+                linear-gradient(336deg, rgba(0,0,255,0.8), rgba(255, 255, 255, 0) 70.71%);
+    animation: gradient 12s ease infinite;
+    background-size: 200% 200%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    @include bg-gradient-home();
+    height: 780px;
+}
+
+// ── CTA BUTTON ────────────────────────────────────────────────────────────
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 28px;
+    padding: 12px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    height: auto;   // override global a { height: 60% }
+    transition: 0.3s;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+        border-color: white;
+        transition: 0.3s;
+    }
+}
+
+
+// ── BG OVERLAY TEXT ───────────────────────────────────────────────────────
+
+.bg-text-caps-p {
+    font-size: 15vw;
+    letter-spacing: 2vw;
+    z-index: -1;
+    filter: blur(3px);
+    color: #535353;
+    opacity: 0.4;
+    position: absolute;
+    width: 100%;
+    font-weight: 900;
+    font-family: "Raleway", sans-serif;
+}
+
+
+// ── NAVIGATION PREVIEW CARDS ──────────────────────────────────────────────
+
+h1 span {
+    align-items: center;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #65A068;
+    width: calc(13vh + 2.5vw);
+    height: 6vh;
+}
+
+.content-img-text {
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    font-size: calc(12px + 1.1vw);
+    justify-content: center;
+    transition: 0.2s;
+
+    &:hover {
+        font-size: calc(12px + 1.2vw);
+        box-shadow: 0px 0px #7b7b7b;
+        transition: 0.2s;
+    }
+}
+
+.content-img {
+    z-index: 1;
+    opacity: 1;
+    height: auto;
+    max-height: 350px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 7%;
+    box-shadow: 9px 13px #414141;
+    transition: .4s;
+
+    &:hover {
+        box-shadow: 4px 5px #7b7b7b;
+        transition: .4s;
+    }
+}
+
+.content-img-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-img-container {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.description-container-social-media-1 {
+    height: 140px;
+}
+
+
+// ── ANIMATED BACKGROUND CIRCLES (purple / home) ───────────────────────────
+
+.animated-circle {
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    top: var(--top);
+    left: var(--left);
+    background-color: rgba(137, 100, 222, 0.4);
+    border-radius: 50%;
+    filter: blur(95px);
+    animation: slide 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate;
+
+    @keyframes slide {
+        0%   { transform: translate(-50%, -50%); }
+        100% { transform: translate(-50%, -150%); }
+    }
+}
+
+
+// ── RESPONSIVE ────────────────────────────────────────────────────────────
+
+@media screen and (max-width: 1000px) {
+    h1 span {
+        width: calc(16vh + 1vw);
+    }
+
+    .span-bg-5 {
+        width: calc(13vh + 1vw);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .bg {
+        height: 320px;
+    }
+
+    .content-img {
+        width: 70%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .span-bg-5 {
+        width: calc(20vh + 1vw);
+    }
+}
+
+@media screen and (max-width: 410px) {
+    h1 span {
+        width: calc(12vh + 1vw);
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .span-bg-5 {
+        width: calc(13vh + 1vw);
+    }
+}

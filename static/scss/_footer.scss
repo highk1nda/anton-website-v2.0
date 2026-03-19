@@ -1,0 +1,79 @@
+// ── SHARED FOOTER UTILITIES ───────────────────────────────────────────────
+
+.hr-separator {
+    margin: auto;
+    width: 70%;
+    height: 2px;
+    background-color: rgb(104, 104, 104);
+    border-radius: 10px;
+    border: 0;
+    margin-top: 10%;
+}
+
+.footer-main-index {
+    justify-content: center;
+}
+
+.footer-div {
+    width: 10%;
+    height: 50px;
+}
+
+.logo-svg {
+    height: 50px;
+    transition: .3s;
+
+    &:hover {
+        height: 60px;
+        transition: .3s;
+    }
+}
+
+// footer-main inside footer section (not contacts — contacts overrides above)
+.footer-main {
+    gap: 10vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 4%;
+}
+
+
+// ── GLOBAL SITE FOOTER ────────────────────────────────────────────────────
+
+.site-footer {
+    background: rgba(0, 0, 0, 0.95);
+    color: rgba(255, 255, 255, 0.73);
+    padding: 0 30px 30px;
+    text-align: center;
+
+    .hr-separator {
+        margin-top: 0;
+    }
+
+    .footer-main {
+        padding-top: 4%;
+    }
+}
+
+.footer-copyright {
+    font-size: 13px;
+    opacity: 0.45;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+// ── RESPONSIVE ────────────────────────────────────────────────────────────
+
+@media screen and (max-width: 800px) {
+    .footer-main {
+        padding-top: 6%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .footer-main {
+        gap: 5vh;
+        padding-top: 7%;
+    }
+}
