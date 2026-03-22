@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 
 const facts = [
-  { label: "Based in",   value: "Leipzig, Germany"              },
-  { label: "Studying",   value: "Computer Science"              },
-  { label: "University", value: "Lancaster University Leipzig"  },
-  { label: "Focus",      value: "Backend & Python"              },
-  { label: "Languages",  value: "UA · EN · DE · PL · more"     },
-  { label: "Interests",  value: "Cycling · Photography · Travel"},
+  { label: "Based in", value: "Leipzig, Germany" },
+  { label: "Studying", value: "Computer Science" },
+  { label: "University", value: "Lancaster University Leipzig" },
+  { label: "Focus", value: "Backend & Python" },
+  { label: "Languages", value: "🇩🇪 DE · 🇬🇧 EN · 🇺🇦 UA · 🇵🇱 PL · more" },
+  { label: "Interests", value: "Cycling · Photography · Travel" },
 ];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.55 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.55 } },
 };
 
 const stagger = {
@@ -39,14 +39,10 @@ export default function About() {
             </motion.h2>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <motion.p variants={fadeUp}>
-                I'm a first-year Computer Science student at Lancaster University
-                Leipzig, focused on backend development and building real-world
-                systems with Python.
+                I'm a second-year Computer Science student at Lancaster University Leipzig, interested in backend development and using Python to build practical, real-world projects.
               </motion.p>
               <motion.p variants={fadeUp}>
-                I enjoy the problem-solving side of engineering — whether that's
-                designing an async bot, architecting a game loop, or keeping RAM
-                usage tight. I care about code that actually works in production.
+                I enjoy the problem solving side of engineering, whether that's building an async bot, working on a game loop, or keeping memory usage low. I care about code that actually holds up in production.
               </motion.p>
               <motion.p variants={fadeUp}>
                 Outside of code, I cycle through Berlin and Leipzig, photograph

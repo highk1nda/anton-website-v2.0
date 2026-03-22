@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const links = [
   {
     label: "Email",
-    value: "anton@asatsuk.com",
-    href: "mailto:anton@asatsuk.com",
+    value: "satsuk.anton@gmail.com",
+    href: "mailto:satsuk.anton@gmail.com",
     icon: (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <rect x="2" y="4" width="20" height="16" rx="2" />

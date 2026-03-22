@@ -17,12 +17,12 @@ export const projects: Project[] = [
     highlights: [
       "Async API handling with aiohttp",
       "Dynamic image generation (512×512 stat cards)",
-      "Role management via slash interactions",
+      "Role management via button interactions",
       "Uptime & status monitoring system",
       "~8–11% CPU usage under load",
-      "~68 MB RAM footprint",
+      "~68 MB RAM usage idle and under load",
     ],
-    github: "https://github.com/highk1nda",
+    github: "https://github.com/highk1nda/Critical-Ops-API---Discord-Bot",
   },
   {
     id: 2,
@@ -35,9 +35,9 @@ export const projects: Project[] = [
       "Story mode & local multiplayer",
       "Character system with unique stat sets",
       "Active & passive boon ability system",
-      "Real-time collision-based combat",
+      "Real-time collision combat",
     ],
-    github: "https://github.com/highk1nda",
+    github: "https://github.com/highk1nda/Tournament-of-the-seven-Pygame",
   },
   {
     id: 3,
@@ -48,9 +48,9 @@ export const projects: Project[] = [
     highlights: [
       "Class-based modular architecture",
       "Per-user state management",
-      "Robust error handling & validation",
+      "Error handling & validation",
       "CRUD-style book operations",
     ],
-    github: "https://github.com/highk1nda/Python_Library",
+    github: "https://github.com/highk1nda/Book-library-python",
   },
 ];

@@ -20,13 +20,16 @@ const categories = [
       "API Integration",
       "Game Architecture",
       "CLI Design",
+      "LLMs",
+      "AI Fundamentals"
     ],
+
   },
 ];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
 const grid = {

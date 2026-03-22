@@ -33,7 +33,7 @@ export default function Hero() {
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center"
     >
       {/* ── Background layers ── */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
+      <div className="pointer-events-none absolute inset-0">
         {/* Animated RGB gradient */}
         <motion.div
           aria-hidden
@@ -50,7 +50,7 @@ export default function Hero() {
         initial="hidden"
         animate="show"
         style={{ y: textY }}
-        className="flex flex-col items-center"
+        className="relative flex flex-col items-center"
       >
         {/* Badge */}
         <motion.span
@@ -81,9 +81,7 @@ export default function Hero() {
           variants={fadeUp}
           className="mb-10 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg"
         >
-          I build efficient backend systems, Discord bots, and interactive
-          applications. Studying Computer Science at Lancaster University Leipzig.
-        </motion.p>
+          I build backend systems, Discord bots, and interactive apps, and I'm studying Computer Science at Lancaster University Leipzig.</motion.p>
 
         {/* CTA buttons */}
         <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-4">
