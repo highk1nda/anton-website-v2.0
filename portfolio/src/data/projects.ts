@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: "Mythological 2D Fighting Game",
     description:
       "A fully playable 2D fighting game with multiple modes, a custom combat engine, and a boon system built entirely in Python using pygame.",
-    tech: ["Python", "pygame"],
+    tech: ["Python", "pygame", "Collaboration", "Teamwork"],
     highlights: [
       "Custom game loop architecture",
       "Story mode & local multiplayer",
